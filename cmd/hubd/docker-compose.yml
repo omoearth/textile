@@ -4,7 +4,7 @@ services:
     image: textile/textile:latest
     restart: always
     volumes:
-      - "${REPO_PATH}/textile:/data/textile"
+      - "/var/www/vhosts/omo.earth/textile/textile:/data/textile"
     environment:
       - HUB_ADDR_API=/ip4/0.0.0.0/tcp/3006
       - HUB_ADDR_API_PROXY=/ip4/0.0.0.0/tcp/3007
@@ -34,14 +34,14 @@ services:
     image: mongo:latest
     restart: always
     volumes:
-      - "${REPO_PATH}/mongo:/data/db"
+      - "/var/www/vhosts/omo.earth/textile/mongo:/data/db"
     ports:
       - "127.0.0.1:27017:27017"
   ipfs:
     image: ipfs/go-ipfs:v0.6.0
     restart: always
     volumes:
-      - "${REPO_PATH}/ipfs:/data/ipfs"
+      - "/var/www/vhosts/omo.earth/textile/ipfs:/data/ipfs"
     ports:
       - "4001:4001"
       - "127.0.0.1:5001:5001"
