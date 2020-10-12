@@ -37,5 +37,5 @@ jobs:
         deploy_targets: 'dev.omo.earth' # required, comma separated list of servers to deploy to.
 
         ssh_user: 'root' # optional, user to connect to deploy targets with. Defaults to 'root'
-        compose_file: 'cmd/hubd/docker-compose.yml' # optional, path/filename of your docker-compose file. Defaults to 'docker-compose.yml'
+        compose_file: 'cmd/hubd/docker-compose-dev.yml' # optional, path/filename of your docker-compose file. Defaults to 'docker-compose.yml'
         validate_container: 'app' # optional, validate that the given container name is running. Otherwise, throw an error. Defaults to 'app'
