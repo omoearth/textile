@@ -30,6 +30,9 @@ jobs:
         key: ${{ secrets.SSH_PRIVATE_KEY }} # required, this will be used when transferring files to your deploy targets
         known_hosts: ${{ secrets.SSH_KNOWN_HOSTS }} # required, should match up with your deploy targets (see below)
     
+    - name: SCP via port-forwarding
+      run: scp ./textile target:/textile
+        
     # Step 3: Deploy!
     - name: Deploy to Staging
       uses: JorgenVatle/docker-compose-deploy@v1.0
