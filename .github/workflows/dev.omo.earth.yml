@@ -31,7 +31,7 @@ jobs:
         known_hosts: ${{ secrets.SSH_KNOWN_HOSTS }} # required, should match up with your deploy targets (see below)
     
     - name: SCP via port-forwarding
-      run: scp -r ./ root@dev.omo.earth:/textile
+      run: scp -r . root@dev.omo.earth:/textile
         
     # Step 3: Deploy!
     - name: Deploy to Staging
